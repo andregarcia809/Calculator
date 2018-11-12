@@ -24,8 +24,7 @@ let eightBrn = document.querySelector('.Calculator__8__key');
 let nineBtn = document.querySelector('.Calculator__9__key');
 
 
-// /* Homework!! */  Why window.onload gives me an error?
-// Updates the numbers key  pressed  in to inputField setup
+
 let inputField = '0';
 let pendingVal;
 let evalStringArray = [];
@@ -33,6 +32,7 @@ let evalStringArray = [];
 let calcNumBtns = document.querySelectorAll('.calc__btn__num');
 let calcOperatorBtns = document.querySelectorAll('.calc__operator__btn')
 
+// Updates the numbers pressed  in to inputField
 let updateInputField = clickObj => {
   let btnClickedVal = clickObj.target.innerText;
 
@@ -95,12 +95,14 @@ for (let i = 0; i < calcOperatorBtns.length; i++) {
   calcOperatorBtns[i].addEventListener('click', performOperation);
 }
 
-// clears all everything from calculator and resets it to 0
+// clears all
 clearBtn.onclick = () => {
   inputField = "0";
   evalStringArray = [];
   calInputEl.innerText= inputField;
 }
+
+// Clears back one
 clearOneBtn.onclick = () => {
   let lengthOfInputfield = inputField.length;
   inputField = inputField.slice(0, lengthOfInputfield - 1);
